@@ -12,6 +12,28 @@
 }
 
 .game__selection--image {
-  width: 75px;
+  width: 50px;
   transform: rotate(90deg);
+}
+
+.game__section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px;
+}
+.pc__selection--image {
+  width: 100px;
+  transform: scaleX(-1) rotate(90deg);
+}
+.player__choices {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.h1{
+  font-size: 1.25rem;
+}
+.h2{
+  font-size: 1.25rem;
 }
