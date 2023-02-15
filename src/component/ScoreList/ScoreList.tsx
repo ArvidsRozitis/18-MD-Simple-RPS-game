@@ -2,6 +2,7 @@ import { Trans } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
+
 export const ScoreList = () => {
   type Scrore = {
     playerName: string;
@@ -10,11 +11,11 @@ export const ScoreList = () => {
     gamesWon: number;
   };
 
-
   const { data, isLoading } = useQuery<Scrore[]>({
     queryKey: ["scores"],
     queryFn: getscoresData,
   });
+  
 
   if (isLoading) {
     return <h1>Loading....</h1>;

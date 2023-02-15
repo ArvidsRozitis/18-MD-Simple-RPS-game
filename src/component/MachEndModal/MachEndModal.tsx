@@ -1,15 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ResulOfTheMach from "../ResulOfTheMach/ResulOfTheMach";
-import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
+import { useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
 
 type RoundProps = {
   roundsWon: number;
   roundsLost: number;
 };
 
-type Scrore = {
-  player: string;
+type UsersScrore = {
+  playerName: string;
   roundsWon: number;
   roundsLost: number;
   gamesWon: number;
@@ -18,8 +20,15 @@ type Scrore = {
 const MachEndModal = ({ roundsWon, roundsLost }: RoundProps) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
+  const [username, setUserName] = useState("");
+
   const submitHanlder = () => {
     navigate(`/`);
+    updateScoresData(roundsWon, roundsLost, username);
+    setTimeout(() => {
+      queryClient.invalidateQueries();
+    }, 1000);
   };
 
   return (
@@ -45,7 +54,15 @@ const MachEndModal = ({ roundsWon, roundsLost }: RoundProps) => {
         >
           <label>
             {t("write your name")}
-            <input type="text" className="results__input" required/>
+            <input
+              type="text"
+              className="results__input"
+              required
+              onChange={(e) => {
+                e.preventDefault();
+                setUserName(e.target.value);
+              }}
+            />
           </label>
           <button>{t("submit your score")}</button>
         </form>
@@ -55,3 +72,33 @@ const MachEndModal = ({ roundsWon, roundsLost }: RoundProps) => {
 };
 
 export default MachEndModal;
+
+const updateScoresData = (
+  roundsWon: number,
+  roundsLost: number,
+  username: string
+) => {
+  axios.get("http://localhost:3004/scores").then(({ data }) => {
+    if (data.find((user: UsersScrore) => user.playerName === username)) {
+      const findPlayer = data.find(
+        (user: UsersScrore) => user.playerName === username
+      );
+      const foundPlayerId: number = findPlayer.id;
+      const foundPlayerRoundsWon: number = findPlayer.roundsWon + roundsWon;
+      const foundPlayerRoundsLose: number = findPlayer.roundsLost + roundsLost;
+      const foundPlayerGamesWon: number = findPlayer.gamesWon + (roundsWon > roundsLost ? 1 : 0);
+      axios.put(`http://localhost:3004/scores/put/${foundPlayerId}`, {
+        roundsWon: foundPlayerRoundsWon,
+        roundsLost: foundPlayerRoundsLose,
+        gamesWon: foundPlayerGamesWon,
+      });
+    } else {
+      axios.post(`http://localhost:3004/scores/post`, {
+        playerName: username,
+        roundsWon: roundsWon,
+        roundsLost: roundsLost,
+        gamesWon: roundsWon > roundsLost ? 1 : 0,
+      });
+    }
+  });
+};
