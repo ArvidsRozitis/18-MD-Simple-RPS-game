@@ -1,10 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ResulOfTheMach from "../ResulOfTheMach/ResulOfTheMach";
+import { useMutation } from "@tanstack/react-query";
 
 type RoundProps = {
   roundsWon: number;
   roundsLost: number;
+};
+
+type Scrore = {
+  player: string;
+  roundsWon: number;
+  roundsLost: number;
+  gamesWon: number;
 };
 
 const MachEndModal = ({ roundsWon, roundsLost }: RoundProps) => {
@@ -37,7 +45,7 @@ const MachEndModal = ({ roundsWon, roundsLost }: RoundProps) => {
         >
           <label>
             {t("write your name")}
-            <input type="text" className="results__input" />
+            <input type="text" className="results__input" required/>
           </label>
           <button>{t("submit your score")}</button>
         </form>
