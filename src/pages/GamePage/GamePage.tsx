@@ -6,6 +6,7 @@ import questionImage from "../../assets/images/question.png";
 import SelectionButton from "../../component/SelectionButton/SelectionButton";
 import generateComputerChoice from "../../modules/generateComputerChoice";
 import { useTranslation } from "react-i18next";
+import MachEndModal from "../../component/MachEndModal/MachEndModal";
 
 export const GamePage = () => {
   const { t } = useTranslation();
@@ -42,6 +43,7 @@ export const GamePage = () => {
   const selectionHangler = (playerChoice: GameElements) => {
     console.log("player", playerChoice);
     const pcChoice = generateComputerChoice(allElements);
+    
     if (pcChoice === elementPapper) {
       setPcSelection(papperImage);
     } else if (pcChoice === elementRock) {
@@ -94,8 +96,13 @@ export const GamePage = () => {
         </div>
       </section>
       <h1>{t(playerWon)}</h1>
-      <h2 className="h2">{t('rounds won')}:{roundWon}</h2>
-      <h2 className="h2">{t("rounds lost")}:{roundLost}</h2>
+      <h2 className="h2">
+        {t("rounds won")}: {roundWon}
+      </h2>
+      <h2 className="h2">
+        {t("rounds lost")}: {roundLost}
+      </h2>
+      {roundWon === 5 || roundLost == 5 ? <MachEndModal roundsWon={roundWon} roundsLost={roundLost}/> : null}
     </>
   );
 };

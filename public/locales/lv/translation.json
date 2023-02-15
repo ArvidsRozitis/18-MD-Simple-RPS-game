@@ -15,5 +15,15 @@
   "rounds lost": "raundi zaudēti",
   "homeDescription": {
     "description": "Codelex mājas darbs, kurā iepazīstamies ar tūlkošanas rīku. Papildus tam, papildinam zināšanas par mysql un node.js."
+  },
+  "You won the game!": "Tu uzvarēji spēli!",
+  "You lost the game!": "Tu zaudēji spēli!",
+  "write your name": "ieraksti savu vārdu",
+  "submit your score": "pievienot rezultātu",
+  "scoreBoard": {
+    "Player": "Spēlētājs",
+    "Gammes won": "Spēles uzvarētas",
+    "rounds w/l": "roundi v/z",
+    "Last played": "Pēdējoreiz spēlets"
   }
 }

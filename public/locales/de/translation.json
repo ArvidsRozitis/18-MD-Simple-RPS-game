@@ -15,5 +15,15 @@
   "rounds lost": "Runden verloren",
   "homeDescription": {
     "description": "Codelex-Hausaufgabe, in der wir das Übersetzungstool kennenlernen. Darüber hinaus fügen wir Wissen über mysql und node.js hinzu."
+  },
+  "You won the game!": "Du hast das spiel gewonnen!",
+  "You lost the game!": "Du hast das Spiel verloren!",
+  "write your name": "schreib deinen namen",
+  "submit your score":"senden sie ihre punktzahl",
+  "scoreBoard": {
+    "Player": "Zahlerin",
+    "Gammes won": "Gams hat gewonnen",
+    "rounds w/l": "runden w/l",
+    "Last played": "Zuletzt gespielt"
   }
 }

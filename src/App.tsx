@@ -10,7 +10,7 @@ function App() {
     lv: { nativeName: "Latviešu" },
     de: { nativeName: "Deutsch" },
   };
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
     <div className="App">

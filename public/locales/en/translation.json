@@ -15,5 +15,15 @@
   "rounds lost": "rounds lost",
   "homeDescription": {
     "description": "Codelex homework where we get to know the translation tool. In addition to that, we add knowledge about mysql and node.js."
+  },
+  "You won the game!": "You won the game!",
+  "You lost the game!": "You lost the game!",
+  "write your name": "write your name",
+  "submit your score": "submit your score",
+  "scoreBoard": {
+    "Player": "Player",
+    "Gammes won": "Gammes won",
+    "rounds w/l": "rounds w/l",
+    "Last played": "Last played"
   }
 }

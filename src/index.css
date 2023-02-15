@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-.App{
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +9,8 @@
 }
 .home_container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .game__buttonContainer {
   display: flex;
@@ -45,18 +46,20 @@
 }
 .h1 {
   font-size: 1.5rem;
+  margin: 0;
 }
 .h2 {
   font-size: 1.25rem;
+  margin: 0;
 }
 .h1__description {
   font-size: 1.5rem;
   text-align: center;
   width: 70%;
+  margin: 0;
 }
 
-
-.language__selection--container{
+.language__selection--container {
   display: flex;
   justify-content: flex-end;
   width: 100%;
@@ -87,4 +90,70 @@
   font-weight: bold;
   background-color: rgb(219, 252, 193);
   font-size: 1.25rem;
+}
+
+.table__container {
+  padding: 50px;
+}
+
+.table__scores {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.table__head-cell {
+  border: 1px solid rgb(110, 110, 110);
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 2rem;
+  padding: 0px 15px;
+}
+.table__content-row {
+  height: 1.5rem;
+  font-size: 0.725rem;
+  transition: height 0.3s;
+}
+.table__content-cell {
+  vertical-align: middle;
+  text-align: left;
+  border: 1px solid rgb(110, 110, 110);
+  text-indent: 8px;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.results__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background-color: rgb(226, 226, 226);
+  width: 300px;
+  height: 600px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.results__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.results__input {
+  width: 80%;
+  height: 20px;
 }
