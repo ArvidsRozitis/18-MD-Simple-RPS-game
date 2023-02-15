@@ -1,26 +1,27 @@
 import { Trans } from "react-i18next";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 export const ScoreList = () => {
   type Scrore = {
-    player: string;
+    playerName: string;
     roundsWon: number;
     roundsLost: number;
     gamesWon: number;
   };
-  const userScoresX = [
-    {
-      player: "EENA",
-      roundsWon: 1,
-      roundsLost: 5,
-      gamesWon: 0,
-    },
-    {
-      player: "Amirus",
-      roundsWon: 15,
-      roundsLost: 6,
-      gamesWon: 3,
-    },
-  ];
+
+
+  const { data, isLoading } = useQuery<Scrore[]>({
+    queryKey: ["scores"],
+    queryFn: getscoresData,
+  });
+
+  if (isLoading) {
+    return <h1>Loading....</h1>;
+  }
+  if (!data) {
+    throw Error("something went wrong!");
+  }
 
   return (
     <div>
@@ -40,10 +41,12 @@ export const ScoreList = () => {
             </tr>
           </thead>
           <tbody>
-            {userScoresX.map((data: Scrore) => (
-              <tr className="table__content-row">
-                <td className="table__content-cell">{data.player}</td>
-                <td className="table__content-cell table__content-cell--middle">{data.gamesWon}</td>
+            {data.map((data: Scrore) => (
+              <tr className="table__content-row" key={Math.random()}>
+                <td className="table__content-cell">{data.playerName}</td>
+                <td className="table__content-cell table__content-cell--middle">
+                  {data.gamesWon}
+                </td>
                 <td className="table__content-cell">
                   {data.roundsWon}/{data.roundsLost}
                 </td>
@@ -57,3 +60,7 @@ export const ScoreList = () => {
 };
 
 export default ScoreList;
+
+const getscoresData = () => {
+  return axios.get("http://localhost:3004/scores").then((res) => res.data);
+};
