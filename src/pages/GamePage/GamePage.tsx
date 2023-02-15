@@ -5,8 +5,10 @@ import papperImage from "../../assets/images/papper.png";
 import questionImage from "../../assets/images/question.png";
 import SelectionButton from "../../component/SelectionButton/SelectionButton";
 import generateComputerChoice from "../../modules/generateComputerChoice";
+import { useTranslation } from "react-i18next";
 
 export const GamePage = () => {
+  const { t } = useTranslation();
   const [playerWon, setPlayerWon] = useState("");
   const [pcSelection, setPcSelection] = useState(questionImage);
   const [roundWon, setRoundWon] = useState(0);
@@ -65,24 +67,24 @@ export const GamePage = () => {
   return (
     <>
       <div>
-        <h1 className="h1">I want to play a game.</h1>
+        <h1 className="h1">{t("Let's play a game")}!</h1>
       </div>
       <section className="game__section">
         <div className="player__choices">
           <SelectionButton
             image={rockImage}
             onClick={() => selectionHangler(elementRock)}
-            elName={elementRock.title}
+            elName={t(elementRock.title)}
           />
           <SelectionButton
             image={scissorsImage}
             onClick={() => selectionHangler(elementScissors)}
-            elName={elementScissors.title}
+            elName={t(elementScissors.title)}
           />
           <SelectionButton
             image={papperImage}
             onClick={() => selectionHangler(elementPapper)}
-            elName={elementPapper.title}
+            elName={t(elementPapper.title)}
           />
         </div>
         <div>
@@ -91,9 +93,9 @@ export const GamePage = () => {
           </div>
         </div>
       </section>
-      <h1>{playerWon}</h1>
-      <h2 className="h2">rounds won:{roundWon}</h2>
-      <h2 className="h2">rounds lost:{roundLost}</h2>
+      <h1>{t(playerWon)}</h1>
+      <h2 className="h2">{t('rounds won')}:{roundWon}</h2>
+      <h2 className="h2">{t("rounds lost")}:{roundLost}</h2>
     </>
   );
 };

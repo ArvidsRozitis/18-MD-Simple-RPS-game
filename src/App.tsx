@@ -2,9 +2,7 @@ import { Route, Routes, NavLink } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import GamePage from "./pages/GamePage/GamePage";
-import "./i18n";
-import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
+import { useTranslation, Trans } from "react-i18next";
 
 function App() {
   const lngs = {
@@ -32,15 +30,15 @@ function App() {
         </div>
       </div>
       <header>
-        <h2>{t('title')}</h2>
+        <h2>{t("title")}</h2>
       </header>
 
       <nav className="nav__bar">
         <NavLink to="/" className="nav__item">
-          Home
+          <Trans i18nKey="navigation.Home">Home</Trans>
         </NavLink>
         <NavLink to="/game" className="nav__item">
-          Play
+          <Trans i18nKey="navigation.Play">Play</Trans>
         </NavLink>
       </nav>
       <Routes>

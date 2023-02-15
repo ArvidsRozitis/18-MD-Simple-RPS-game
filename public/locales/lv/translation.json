@@ -1,0 +1,17 @@
+{
+  "navigation": {
+    "Home": "Sākums",
+    "Play": "Spēlēt"
+  },
+  "title": "Latviešu",
+  "homeDescription": "Apraksts Latviešu valodā",
+  "Rock": "Akmens",
+  "Scissors": "Šķēres",
+  "Paper": "Papīrs",
+  "Let's play a game": "Uzpēlējam",
+  "It's a draw": "Neizšķirts",
+  "You won!": "Tu uzvarēji!",
+  "You lose!": "Tu zaudēji!",
+  "rounds won": "raundi vinnēti",
+  "rounds lost": "raundi zaudēti"
+}

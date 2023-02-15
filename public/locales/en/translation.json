@@ -1,0 +1,17 @@
+{
+  "navigation": {
+    "Home": "Home",
+    "Play": "Play"
+  },
+  "title": "English",
+  "homeDescription": "Description in English",
+  "Rock": "Rock",
+  "Scissors": "Scissors",
+  "Paper": "Paper",
+  "Let's play a game": "Let's play a game",
+  "It's a draw": "It's a draw",
+  "You won!": "You won!",
+  "You lose!": "You lose!",
+  "rounds won": "rounds won",
+  "rounds lost": "rounds lost"
+}
