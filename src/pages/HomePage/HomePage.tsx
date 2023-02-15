@@ -1,11 +1,13 @@
-import { useTranslation } from "react-i18next";
-
+import { useTranslation, Trans } from "react-i18next";
+import descriptionText from "../../assets/texts/description";
 const HomePage = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
-      <h1>{t("homeDescription")}</h1>
+    <div className="home_container">
+      <h1 className="h1__description">
+        <Trans i18nKey="homeDescription.description">{descriptionText}</Trans>
+      </h1>
     </div>
   );
 };

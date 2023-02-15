@@ -8,30 +8,27 @@ function App() {
   const lngs = {
     en: { nativeName: "English" },
     lv: { nativeName: "Latviešu" },
+    de: { nativeName: "Deutsch" },
   };
   const { t, i18n } = useTranslation();
 
   return (
     <div className="App">
-      <div>
-        <div>
-          {Object.keys(lngs).map((lng) => (
-            <button
-              key={lng}
-              style={{
-                fontWeight: i18n.resolvedLanguage === lng ? "bold" : "normal",
-              }}
-              type="submit"
-              onClick={() => i18n.changeLanguage(lng)}
-            >
-              {lngs[lng].nativeName}
-            </button>
-          ))}
-        </div>
+      <div className="language__selection--container">
+        {Object.keys(lngs).map((lng) => (
+          <button
+            className="language__button"
+            key={lng}
+            style={{
+              fontWeight: i18n.resolvedLanguage === lng ? "bold" : "normal",
+            }}
+            type="submit"
+            onClick={() => i18n.changeLanguage(lng)}
+          >
+            {lngs[lng].nativeName}
+          </button>
+        ))}
       </div>
-      <header>
-        <h2>{t("title")}</h2>
-      </header>
 
       <nav className="nav__bar">
         <NavLink to="/" className="nav__item">

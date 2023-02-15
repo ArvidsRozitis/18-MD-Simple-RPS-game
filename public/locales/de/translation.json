@@ -1,0 +1,19 @@
+{
+  "navigation": {
+    "Home": "Beginn",
+    "Play": "Spielen"
+  },
+  "title": "Latviešu",
+  "Rock": "Felsen",
+  "Scissors": "Schere",
+  "Paper": "Papier",
+  "Let's play a game": "Passen wir",
+  "It's a draw": "Unentschieden",
+  "You won!": "Du hast gewonnen!",
+  "You lose!": "Du hast verloren!",
+  "rounds won": "Runden gewonnen",
+  "rounds lost": "Runden verloren",
+  "homeDescription": {
+    "description": "Codelex-Hausaufgabe, in der wir das Übersetzungstool kennenlernen. Darüber hinaus fügen wir Wissen über mysql und node.js hinzu."
+  }
+}

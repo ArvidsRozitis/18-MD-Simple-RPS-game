@@ -4,7 +4,6 @@
     "Play": "Play"
   },
   "title": "English",
-  "homeDescription": "Description in English",
   "Rock": "Rock",
   "Scissors": "Scissors",
   "Paper": "Paper",
@@ -13,5 +12,8 @@
   "You won!": "You won!",
   "You lose!": "You lose!",
   "rounds won": "rounds won",
-  "rounds lost": "rounds lost"
+  "rounds lost": "rounds lost",
+  "homeDescription": {
+    "description": "Codelex homework where we get to know the translation tool. In addition to that, we add knowledge about mysql and node.js."
+  }
 }

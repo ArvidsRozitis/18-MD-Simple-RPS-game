@@ -4,7 +4,6 @@
     "Play": "Spēlēt"
   },
   "title": "Latviešu",
-  "homeDescription": "Apraksts Latviešu valodā",
   "Rock": "Akmens",
   "Scissors": "Šķēres",
   "Paper": "Papīrs",
@@ -13,5 +12,8 @@
   "You won!": "Tu uzvarēji!",
   "You lose!": "Tu zaudēji!",
   "rounds won": "raundi vinnēti",
-  "rounds lost": "raundi zaudēti"
+  "rounds lost": "raundi zaudēti",
+  "homeDescription": {
+    "description": "Codelex mājas darbs, kurā iepazīstamies ar tūlkošanas rīku. Papildus tam, papildinam zināšanas par mysql un node.js."
+  }
 }
