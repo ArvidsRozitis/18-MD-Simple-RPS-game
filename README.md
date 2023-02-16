@@ -19,3 +19,4 @@ For the application to run properly, You need to do the next steps.
 
 ## The second part.
 `Express Typescript` server is on this repository(https://github.com/ArvidsRozitis/18-BE-P2-Simple-RPS-game).
+Follow the instructions on the second repository.
