@@ -67,7 +67,7 @@ export const GamePage = () => {
   };
 
   return (
-    <>
+    <div className="game__page">
       <div>
         <h1 className="h1">{t("Let's play a game")}!</h1>
       </div>
@@ -103,7 +103,7 @@ export const GamePage = () => {
         {t("rounds lost")}: {roundLost}
       </h2>
       {roundWon === 5 || roundLost == 5 ? <MachEndModal roundsWon={roundWon} roundsLost={roundLost}/> : null}
-    </>
+    </div>
   );
 };
 
