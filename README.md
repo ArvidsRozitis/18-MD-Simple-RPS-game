@@ -1,7 +1,7 @@
 # 18-MD-Simple-RPS-game
 
 Codelex homework where we get to know the translation tool `i18n` .
-In addition to that, we add knowledge about `MySQL` and node.js.
+In addition to that, we add knowledge about `MySQL` and express.js.
 
 Homework is about making game rock-paper-scissors in `React`.
 Homework consists from tree parts.
