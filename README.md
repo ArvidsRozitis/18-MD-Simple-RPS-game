@@ -17,9 +17,6 @@ You can run comand `npm run dev`.
 This comand will run React app on (http://localhost:5173/).
 For the application to run properly, You need to do the next steps.
 
-## The second part.
+## The second and Third part.
 `Express Typescript` server is on this repository(https://github.com/ArvidsRozitis/18-BE-P2-Simple-RPS-game).
 Follow the instructions on the second repository.
-
-## The third part.
-`Docker seed` in process...
