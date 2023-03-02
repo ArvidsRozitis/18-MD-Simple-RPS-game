@@ -8,7 +8,7 @@ Homework consists from tree parts.
 
 ## Preview
 
-![preview](./preview.gif)
+![preview3](./preview3.gif)
 
 1. Front end `React Vite App`
 2. Back end `MySQL` database on `Docker`
