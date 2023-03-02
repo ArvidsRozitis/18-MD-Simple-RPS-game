@@ -8,28 +8,30 @@ import generateComputerChoice from "../../modules/generateComputerChoice";
 import { useTranslation } from "react-i18next";
 import MachEndModal from "../../component/MachEndModal/MachEndModal";
 
+type GameElements = {
+  title: string;
+  beats: GameElements[];
+};
+const elementRock: GameElements = {
+  title: "Rock",
+  beats: [],
+};
+const elementPapper: GameElements = {
+  title: "Paper",
+  beats: [],
+};
+const elementScissors: GameElements = {
+  title: "Scissors",
+  beats: [],
+};
+
 export const GamePage = () => {
   const { t } = useTranslation();
   const [playerWon, setPlayerWon] = useState("");
   const [pcSelection, setPcSelection] = useState(questionImage);
   const [roundWon, setRoundWon] = useState(0);
   const [roundLost, setRoudLost] = useState(0);
-  type GameElements = {
-    title: string;
-    beats: GameElements[];
-  };
-  const elementRock: GameElements = {
-    title: "Rock",
-    beats: [],
-  };
-  const elementPapper: GameElements = {
-    title: "Paper",
-    beats: [],
-  };
-  const elementScissors: GameElements = {
-    title: "Scissors",
-    beats: [],
-  };
+  
   elementPapper.beats.push(elementRock);
   elementRock.beats.push(elementScissors);
   elementScissors.beats.push(elementPapper);

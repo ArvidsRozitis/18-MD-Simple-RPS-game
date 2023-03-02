@@ -6,6 +6,10 @@ In addition to that, we add knowledge about `MySQL` and express.js.
 Homework is about making game rock-paper-scissors in `React`.
 Homework consists from tree parts.
 
+## Preview
+
+![preview](./preview.gif)
+
 1. Front end `React Vite App`
 2. Back end `MySQL` database on `Docker`
 3. Back end server on `Express Typescript`
@@ -20,3 +24,5 @@ For the application to run properly, You need to do the next steps.
 ## The second and Third part.
 `Express Typescript` server and `docker files` is on this repository(https://github.com/ArvidsRozitis/18-BE-P2-Simple-RPS-game).
 Follow the instructions on the second repository.
+
+
